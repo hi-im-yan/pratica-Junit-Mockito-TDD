@@ -6,6 +6,7 @@ import com.example.sistemaacademico.models.Prova;
 import com.example.sistemaacademico.repositories.AlunoRepository;
 import com.example.sistemaacademico.repositories.GradeSemestreRepository;
 import com.example.sistemaacademico.repositories.ProvaRepository;
+import com.example.sistemaacademico.responseBody.LancarNotaResponseBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,15 +24,18 @@ public class LancamentoNotaService {
         this.provaRepository = provaRepository;
     }
 
-    public void lancarNotaNaProva(long provaId, float nota){
+    public LancarNotaResponseBody lancarNotaNaProva(long provaId, float nota){
         Optional<Prova> optProva = provaRepository.findById(provaId);
+        Prova prova = optProva.get();
 
         if(nota < 0 || nota > 10)
             throw new RuntimeException("Nota negativa inválida");
         else{
-            Prova prova = optProva.get();
+
             prova.setNota(nota);
             provaRepository.saveAndFlush(prova);
         }
+
+        return new LancarNotaResponseBody("ok", prova);
     }
 }
