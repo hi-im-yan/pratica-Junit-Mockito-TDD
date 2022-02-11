@@ -32,6 +32,9 @@ public class Aluno {
         this.id = id;
     }
 
+    public Aluno() {
+    }
+
     public String getNome() {
         return nome;
     }

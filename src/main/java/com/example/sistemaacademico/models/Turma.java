@@ -20,6 +20,9 @@ public class Turma {
     @JoinColumn(name = "professor_id", nullable = false)
     Professor professor;
 
+    public Turma() {
+    }
+
     private String nome;
 
     private LocalTime horarioInicial;

@@ -28,6 +28,9 @@ public class Prova {
         this.id = id;
     }
 
+    public Prova() {
+    }
+
     public Long getId() {
         return id;
     }
