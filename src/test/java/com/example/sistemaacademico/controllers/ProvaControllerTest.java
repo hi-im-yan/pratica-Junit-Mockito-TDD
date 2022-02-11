@@ -1,6 +1,8 @@
 package com.example.sistemaacademico.controllers;
 
+import com.example.sistemaacademico.models.Aluno;
 import com.example.sistemaacademico.models.Prova;
+import com.example.sistemaacademico.models.Turma;
 import com.example.sistemaacademico.repositories.ProvaRepository;
 import com.example.sistemaacademico.requestBody.LancarNotaRequestBody;
 import com.example.sistemaacademico.services.LancamentoNotaService;
