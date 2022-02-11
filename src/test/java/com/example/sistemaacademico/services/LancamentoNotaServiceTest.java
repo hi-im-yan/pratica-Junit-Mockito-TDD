@@ -1,12 +1,9 @@
 package com.example.sistemaacademico.services;
 
-import com.example.sistemaacademico.models.Aluno;
 import com.example.sistemaacademico.models.Prova;
-import com.example.sistemaacademico.models.Turma;
 import com.example.sistemaacademico.repositories.AlunoRepository;
 import com.example.sistemaacademico.repositories.GradeSemestreRepository;
 import com.example.sistemaacademico.repositories.ProvaRepository;
-import org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -19,19 +16,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 class LancamentoNotaServiceTest {
 
     @Mock
-    AlunoRepository alunoRepository;
-
-    @Mock
     ProvaRepository provaRepository;
-
-    @Mock
-    GradeSemestreRepository gradeSemestreRepository;
 
     private LancamentoNotaService service;
 
@@ -46,7 +38,7 @@ class LancamentoNotaServiceTest {
     public void deveSalvarNotaEmUmaProva(){
         /*
         * Verifica se o método saveAndFlush foi usado
-        * Verifica nota salva é igual ao que foi enviado no parametro
+        * Verifica nota salvada é igual ao que foi enviado no parametro
         * */
 
         List<Prova> provas = getProvas();
