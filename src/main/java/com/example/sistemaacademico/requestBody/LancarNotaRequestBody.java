@@ -1,14 +1,17 @@
 package com.example.sistemaacademico.requestBody;
 
 
-public class LancarNotaBody{
+public class LancarNotaRequestBody{
 
     private Long provaId;
     private float nota;
 
-    public LancarNotaBody(Long provaId, float nota) {
+    public LancarNotaRequestBody(Long provaId, float nota) {
         this.provaId = provaId;
         this.nota = nota;
+    }
+
+    public LancarNotaRequestBody() {
     }
 
     public Long getProvaId() {
