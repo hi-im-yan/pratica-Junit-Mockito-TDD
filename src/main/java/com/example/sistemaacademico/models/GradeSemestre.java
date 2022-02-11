@@ -34,6 +34,11 @@ public class GradeSemestre {
         this.turma = turma;
     }
 
+    public GradeSemestre(Turma turma, Aluno aluno) {
+        this.turma = turma;
+        this.aluno = aluno;
+    }
+
     public Turma getTurmaId() {
         return turma;
     }
